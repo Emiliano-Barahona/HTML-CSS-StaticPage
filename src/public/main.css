@@ -1,0 +1,782 @@
+* { /* A todos los elementos: */
+    box-sizing: border-box; /* se pone para que el espaciado interno y externo sumen un espaciado, */
+    margin: 0; /* no se le coloca margenes y  */ 
+    padding: 0; /* no se colocan espaciados adentro */
+}
+
+body { /* A todo el cuerpo de la pagina: */
+    background-color: #000000; /* se le establece el fondo en negro, */ 
+    color: #fff; /* se hace el texto blanco, */
+    /* se utiliza un patron de la pagina "https:www.heropatterns.com/", */ 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23540606' fill-opacity='0.4'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    font-size: 20px; /* con una letra del tamaño de 20px y */
+    font-family: "Oswald", sans-serif; /* se usa un tipo de letra "Oswald", el cual está importada en "index.html"*/
+}
+
+a { /* A las etiquetas "a": */ 
+    color: #ffffff; /* se hace el texto blanco y */
+    text-decoration: none; /* se le quita el subrayado */ 
+}
+
+ul { /* A las etiquetas ul: */
+    list-style: none; /* se sacan los posibles diseños predeterminados que puedan tener */
+}
+
+.container { /* Para los contenedores: */
+    width: 90%; /* el contenido solo va a abarcar el 90% y */ 
+    margin: auto; /* se van a centrar los elementos */
+}
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+
+
+
+
+
+
+
+/* NAVEGACIÓN */
+.nav-main { /* A la clase "nav-main": */
+    font-size: 17px; /* se le pone el font size en 17 pixeles, */
+    display: flex; /* se organizan los elementos, */
+    justify-content: space-between; /* se le indica que sus elementos abaquen todo el espacio posible, */
+    align-items: center; /* se centran los items */
+    height: 60px; /* se establece una altura es de 60px y */ 
+    padding: 20px 0; /* el padding tendrá un ancho de 20px de ancho por 0 de largo */ 
+}
+
+.menu-btn { /* A la clase "menu-btn": */
+    cursor: pointer; /* se le establece que cuando el cursor este sobre, tome la forma de un puntero, */
+    position: absolute; /* con una posición absoluta, */
+    font-size: 25px; /* con un tamaño de 25px y */
+    top: 11.5px; /* con un espacio superior de 11.5px. */
+    transform: translateX(-20px); /* También se le indica que se traslade 20px a su derecha, */
+    z-index: 2; /* que tenga un valor de z-index de 2 y */
+    margin-right: 50px; /* que tenga un margen derecho de 50px */
+}
+
+.menu-btn:hover { /* A la clase "menu-btn" se le agrega la pseudoclase hover y: */
+    opacity: .6; /* se le establece una opacidad de 0.6 */
+}
+
+/* MENU AL ESTAR DESACTIVO */
+
+.nav-main ul { /* A las etiquetas ul de la clase "nav-main": */
+    display: flex; /* se les establece un display de tipo flex */
+}
+
+.nav-main ul li { /* Desde la clase "nav-main" desde los ul, las etiquetas li: */
+    padding: 10px; /* el pading será de 10px (lo cual los separa) */
+}
+
+.nav-main ul li a { /* Desde de la clase "nav-main" desde los ul, desde los li, la etiqueta a: */
+    padding: 2px; /* tendrá un padding de 2px (esto separa al texto del subrayado que aparece al tocar) */
+}
+
+.nav-main ul li:hover { /* Desde la clase "nav-main" desde los ul a la etiqueta li se le añade su pseudoclase hover y: */
+    border-bottom: 2px solid #ffffff; /* se le agrega un boton de 2px de tamaño, de forma solida y de color blanco, y */
+    opacity: .6; /* una opacidad de 0.6 */ 
+}
+
+
+.nav-main ul.nav-menu { /* A la etiqueta ul de clase nav-menu: */
+    /* flex: 1; /* se colocan los elementos al lado de la imagen (brand.png) */
+    margin-left: 30px; /* con la distancia/separación de 20px*/
+}
+
+/* MENU AL ESTAR ACTIVO */
+
+.nav-main ul.nav-menu.show { /* Desde la clase ".nav-main" de sus etiquetas ul, a la clase ".nav-menu" cuando se le agregue la clase "show": */
+    display: block; /* se le establece un display block para que el mismo ocupe una linea completa, */
+    position: absolute; /* se le indica una posición absoluta, */
+    z-index: 5; /* con un valor en su z-index de 5, */
+    top: 0; /* sin espacio en la parte superior, */
+    left: 0; /* tampoco en la parte izquierda, */
+    background: #2f3640; /* con un fondo de color #2f3640, */
+    width: 50%; /* que abarque la mitad del contenido, */
+    height: 100%; /* con una altura del 100%, */
+    padding: 30px; /* con un padding de 30px, */
+    opacity: .9; /* que tenga un valor de 0.9 de opacidad, */
+    transform: translateX(37px); /* que se traslade 37px a su derecha cuando se visible y */
+    transition: transform 1s ease-in-out; /* que cuando aparezca, tarde de 0.5g */
+}
+
+.nav-main ul.nav-menu.show ul { /* Desde la clase "nav-main", de sus etiqeutas ul y desde la clase "nav-menu" con la clase "show", sus etiquetas ul:*/
+    padding: 70px; /* tendrán un padding de 70px */ 
+}
+
+.nav-main ul.nav-menu.show .deploy .sub-menux { /* Desde la clase "nav-main", de sus etiqeutas ul, desde la clase "nav-menu" con la clase "show" y desde la clase "deploy" su clase "sub-menux": */
+    display: none !important; /* se le impone que no tenga un display (gracais a la propiedad "!important" */
+}
+
+.nav-main ul.nav-menu.show .menu-btn { /* Desde la clase "nav-main", de sus etiqeutas ul y desde la clase "nav-menu" con la clase "show", a la clase "menu-btn":*/
+    display: block; /* se ke establece un display de tipo block (para que se vea cuando este activo el menu) */
+}
+
+
+
+/* LISTAS DE NEAVEGACION */
+
+.deploy { /* A la clase "deploy": */
+    position: relative; /* se le establece una posición relativa, */
+    display: block; /* con un display block y */
+    cursor: pointer; /* que cuando el mouse este arriba sea cambie a puntero */
+}
+
+.sub-menux { /* A la clase "sub-menux": */
+    display: none !important; /*se le impone que no tenga display (con la funcion de que no obedezca ninguna herencia, !important), */
+    position: absolute; /* con una posición absoluta, */ 
+    margin-top: 1.5vw; /* que tenga como margen 15.vw y */
+    opacity: 1; /* una opacidad completa (de 1)*/
+}
+
+.sub-menux > li { /* A la etiqueta li hija de la clase "sub-menux": */
+    width: 190px; /* se le establece un width de 190px, */
+    transform: translateX(-20px); /* también se le indica que se traslade 20px a su izquierda, */
+    border-bottom:solid 1px #fff; /* con un borde solido, de 1px y blanco, */
+    text-align: center; /* que su texto este centrado y */
+    background-color: #24252a; /* que tenga un fondo de color #24252a*/
+}
+
+.sub-menu1 { /* A la clase "sub-menu1": */
+    transform: translateX(100%); /* se le indica que se traslade el 100%*/
+    position: absolute; /* con una posición absoluta, */
+    right: 0; /* sin espaciado a su derecha, */
+    top: 0; /* ni tampoco a su izquierda, */ 
+    display: none !important; /* sin display (imponiendole con la funcion que se sobrepone a herencias, !important), */
+    opacity: 1; /* con una opacidad del 100% y */
+    background-color: #24252a; /* un fonod de color #24252a */
+}
+
+.sub-menu1 > li { /* A la etiqueta li hija de la clase "sub-menu1": */
+    padding: 1.5vw; /* se le agrega un padding de 1.5vw, */
+    border-bottom: solid 1px #fff; /* con un borde en su boton solido, de 1px y blanco, y */
+    width: 150px; /* que tenga de ancho 150px*/
+}
+
+.sub-menu2 { /* A la clase "sub-menu2": */
+    transform: translateX(100%); /* se le indica que se traslade un 100%, */
+    position: absolute; /* con una posición absoluta, */
+    right: 0; /* sin espaciado a su derecha, */
+    top: 0; /* tampoco en su parte superior, */
+    display: none !important; /*imponiendole que no tenga display (gracias a la propiedad !important) y */
+    background-color: #24252a; /* que tenga un fondo oscuro de color #25242a */
+}
+
+.sub-menu2 > li { /* A la etiqueta li, hija de la clase "sub-menu2": */
+    padding: 1.5vw; /* se le establece un padding de 1.5vw, */
+    border-bottom: solid 1px #fff; /* con un borde solido, de 1px y blanco en su boton, y */
+    width: 150px; /* con un width de 150px */
+}
+
+
+.sub-menu3 { /* A la clase "sub-menu3": */
+    transform: translateX(100%); /* se le indica que se traslade un 100%, */
+    position: absolute; /* con una posición absoluta, */
+    right: 0; /* sin espaciado a su derecha, */
+    top: 0; /* tampoco en su parte superior, */
+    display: none !important; /*imponiendole que no tenga display (gracias a la propiedad !important) y */
+    background-color: #24252a; /* que tenga un fondo oscuro de color #25242a */
+}
+
+.sub-menu3 > li { /* A la etiqueta li hija de la clase "sub-menu3": */
+    padding: 1.5vw; /* se le establece un padding de 1.5vw, */
+    border-bottom: solid 1px #fff; /* con un borde solido, de 1px y blanco en su boton, y */
+    width: 150px; /* con un width de 150px */
+}
+
+.sub-menu4 { /* A la clase "sub-menu4": */
+    transform: translateX(100%); /* se le indica que se traslade un 100%, */
+    position: absolute; /* con una posición absoluta, */
+    right: 0; /* sin espaciado a su derecha, */
+    top: 0; /* tampoco en su parte superior, */
+    display: none !important; /*imponiendole que no tenga display (gracias a la propiedad !important) y */
+    background-color: #24252a; /* que tenga un fondo oscuro de color #25242a */
+}
+
+.sub-menu4 > li { /* A la etiqueta li hija de la clase "sub-menu4": */
+    padding: 1.5vw; /* se le establece un padding de 1.5vw, */
+    border-bottom: solid 1px #fff; /* con un borde solido, de 1px y blanco en su boton, y */
+    width: 150px; /* con un width de 150px */
+}
+
+.sub-menu5 { /* A la clase "sub-menu5": */
+    transform: translateX(100%); /* se le indica que se traslade un 100% */
+    position: absolute; /* con una posición absoluta, */
+    right: 0; /* sin espaciado a su derecha, */
+    top: 0; /* tampoco en su parte superior, */
+    display: none !important; /*imponiendole que no tenga display (gracias a la propiedad !important) y */
+    background-color: #24252a; /* que tenga un fondo oscuro de color #25242a */
+}
+
+.sub-menu2 > li { /* A la etiqueta li hija de la clase "sub-menu2": */
+    padding: 1.5vw; /* se le establece un padding de 1.5vw, */
+    border-bottom: solid 1px #fff; /* con un borde solido, de 1px y blanco en su boton, y */
+    width: 150px; /* con un width de 150px */
+}
+
+
+
+/* CLASES HOVER */
+
+.deploy:hover > .sub-menux { /* Desde la pseudoclase hover de la clase "deploy", a su clase hija "sub-menux": */
+    display: block !important; /* se ke impone que no tenga un display (gracias a la propiedad "!important! */
+}
+
+/* Desde los menus, a las pseudoclases de la etiquetas li hijas: */
+.sub-menux > li:hover,
+.sub-menu1 > li:hover,
+.sub-menu2 > li:hover,
+.sub-menu3 > li:hover,
+.sub-menu4 > li:hover,
+.sub-menu5 > li:hover {
+    background-color: #ce1111; /* se les establece un fondo de color #ce1111, */ 
+    cursor: pointer; /* que cuando el mouse este sobre este se ponga en forma de puntero y */
+    opacity: 1; /* que tenga una opacidad de 1 */
+}
+
+/* Desde las pseudoclase hover de los items 1, 2, 3, 4 y 5, las clases hijas "sub-menu": */
+.item1:hover > .sub-menu1,
+.item2:hover > .sub-menu2,
+.item3:hover > .sub-menu3,
+.item4:hover > .sub-menu4
+.item5:hover > .sub-menu5 {
+    display: block !important; /* se le establece que no tenga un display (se le impone mediante el "!important", y */
+    opacity: 1; /*que tenga una opacidad de 1*/
+}
+
+/* HR DE LA NAVEGACION */ 
+hr { /*A la etiqueta hr: */
+    margin: 0 0 20px 0; /* se le agrega un margen de 20px de alto por 0 de ancho (para separar de la navegación)*/
+}
+
+
+
+
+
+/* ---------------------------------------------- */
+
+
+
+
+
+/* SHOWCASE */
+.showcase{ /* A la clase "showcase": */
+    width: 100%; /* se le establece un ancho de 100%, */
+    height: 550px; /* y 550px de altura,  */
+     /* También se le agrega una imagen de fondo que es"chip.jpg" la cual no se tiene que repetir,
+     que este centrada y que abarque toda la foto/contenido*/
+    background: url("./img/chip.jpg") no-repeat center center/cover;
+    padding: 50px; /* Ademas se le integra un padding de 50px, */
+    color: #ffffff; /* se le establece un color blanco, */
+    margin-bottom: 20px; /* se le indica un margen de 20px (para separar la imagen con las que siguen) */
+    /* y con esto se centra y baja el texto*/
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    /* Y por ultimo se le agrega una transición para la psuedoclase hover (que está después)*/
+    transition: .2s;
+}
+
+.showcase:hover { /* Desde la clase "showcase*, a su pseudoclase hover: */
+    transform: scale(1.1); /* se le establece que se agrande / scale 1.1 */
+}
+
+
+.btn { /* A las etiquetas que tengan la clase btn: */
+    cursor: pointer; /* se le agrega la funcion de parecer un boton cuando el cursor este en él, */
+    display: inline-block; /* se le puede ajustar el ancho y alto respetando los margenes y rellenos, aparte de */
+    border: 0; /* también tener un borde de cero. */
+    font-weight: bold; /*  Además se le pone una fuente "bold", */
+    padding: 10px 20px; /* con un padding de 10px de alto por 20px de ancho, */
+    background: #262626; /* que tenga un fondo oscuro y */
+    color: #ffffff; /* que la letra sea de color blanco. */
+    font-size: 15px; /* Por ultimo se le agrega un tamaño de fuente de 15px, */
+    border: 1px solid #ffffff; /* con un borde de 1px, solido y de color blanco */
+    margin: 10px 0px; /* y un margen de 10px de alto por 0 de ancho*/
+}
+
+.btn:hover { /* A las etiquetas que tengan la clase btn desde su pseudoclase: */
+    opacity: .6; /* se le agrega una opacidad de 0.6 (con esto el boton al tocarlo se hace "transparente") */
+    text-decoration: underline; /* y un subrayado denajo del texto (al tocar el botón, aprece el subrayado)*/
+}
+
+.showcase h2,/* A las etiquetas h2 de la clase showcasae y*/
+.showcase p { /* a las etiquetas p de la misma clase: */
+    margin-bottom: 10px; /* van a tener un margen de boton de 10px*/
+}
+
+.showcase .btn { /* Desde la clase "showcase", la clase "btn": */
+    margin-top: 20px; /* tendra un margen superior de 20px */
+}
+
+
+
+
+
+/* --------------------------------------------- */
+
+
+
+
+
+/* TARJETA DE NOTICIAS */
+.news-cards { /*A las etiquetas de clase news cards: */
+    display: grid; /* se le especifica el comportaiento de visualización, */
+    grid-template-columns: repeat(4, 1fr); /* se crean 4 columnas ( 4 x 1f = 4fr, cada fr por columna), */
+    gap: 25px; /* que van a tener un espaciado interno de 25px, */
+    margin: 70px 0; /* un margen de 70px de alto con 0px de ancho y */
+    transition: .2s; /* que tenga una transición de 0.2 segundos */
+}
+
+.card-img1 { /* A la clase "card-img1": */
+    width: 100%; /* estas van a abarcar el 100% del contenedor y */
+    height: 180px; /* con una altura de 180px. */
+    background: no-repeat center center/cover; /* También tendrá un fondo que no se repita, centrado y que abarque toda la pantalla, y */
+    transition: .2s; /* que tenga transición de 0.2 segundos */
+}
+
+.card-img2 { /* A la clase "card-img2": */
+    width: 100%; /* estas van a abarcar el 100% del contenedor y */
+    height: 180px; /* con una altura de 180px */
+    background: no-repeat center center/cover; /* También tendrá un fondo que no se repita, centrado y que abarque toda la pantalla, y */
+    transition: .2s; /* que tenga una transición de 0.2 segundos */
+}
+
+.card-img3 { /* A la clase "card-img3": */
+    width: 100%; /* estas van a abarcar el 100% del contenedor y */
+    height: 180px; /* con una altura de 180px. */
+    background: no-repeat center center/cover; /* También tendrá un fondo que no se repita, centrado y que abarque toda la pantalla, y */
+    transition: .2s; /* que tenga una transición de 0.2 segundos */
+}
+
+.card-img4 { /* A la clase "card-img4": */
+    width: 100%; /* estas van a abarcar el 100% del contenedor y */
+    height: 180px; /* con una altura de 180px. */
+    background: no-repeat center center/cover; /* También tendrá un fondo que no se repita, centrado y que abarque toda la pantalla, y */
+    transition: .2s; /* que tenga una transición de 0.2 segundos */
+}
+
+.card-img6 { /* A la clase "card-img6": */
+    width: 100%; /* estas van a abarcar el 100% del contenedor y */
+    height: 180px; /* con una altura de 180px. */
+    background: no-repeat center center/cover; /* También tendrá un fondo que no se repita, centrado y que abarque toda la pantalla, y */
+    transition: .2s; /* que tenga una transición de 0.2 segundos */
+}
+
+.card-img7 { /* A la clase "card-img7": */
+    width: 100%; /* estas van a abarcar el 100% del contenedor */
+    height: 180px; /* con una altura de 180px. */
+    background: no-repeat center center/cover;/* También tendrá un fondo que no se repita, centrado y que abarque toda la pantalla, y */
+    transition: .2s; /* que tenga una transición de 0.2 segundos */
+}
+
+.card-img8 { /* A la clase "card-img8": */
+    width: 100%; /* estas van a abarcar el 100% del contenedor y */
+    height: 180px; /* con una altura de 180px. */
+    background: no-repeat center center/cover;/* También tendrá un fondo que no se repita, centrado y que abarque toda la pantalla, y */
+    transition: .2s; /* que tenga una transición de 0.2 segundos */
+}
+
+.card-img9 { /* A la clase "card-img9": */
+    width: 100%; /* estas van a abarcar el 100% del contenedor y */
+    height: 180px; /* con una altura de 180px. */
+    background: no-repeat center center/cover; /* También tendrá un fondo que no se repita, centrado y que abarque toda la pantalla, y */
+    transition: .2s; /* que tenga una transición de 0.2 segundos */
+}
+
+.news-cards h3 { /* A las etiquetas h3 de la clase "news-cards": */
+    font-size: 20px; /* se le coloca un tamaño de 20px, */
+    margin: 10px 0; /* un margen de 10px de alto por 0pc de ancho y */
+    font-style: italic; /* una letra en cursiva */
+}
+
+.news-cards a { /* A las etiquetas a de la clase "news-cards: "*/
+    color: #f2f2f2; /* serán de color blanco, */
+    padding: 10px 0; /* también se les establece un padding de 10px de alto por 0px de ancho y */
+    display: inline-block;  /* se le dice que respete los margenes y rellenos preestablecidos */
+}
+
+.news-cards a:hover { /* A la pseudoclase hover de la etiqueta a, de la clase "news-cards": */
+    text-decoration: underline; /* se le agrega un subrayado y */
+    opacity: .6; /* se le establece una opacidad de .6 */
+}
+
+.card { /* A la clase "card": */
+    background: no-repeat center center/cover; /* se le establece que su fondo no se repita, este centrado y abarque todo el contenido, y */
+    transition: .2s; /* que tenga una transición que dure 0.2s */
+}
+
+.card-header { /* A la clase "card-header": */
+    width: 100%; /* se le establece que abarque todo su ancho */
+}
+
+.card:hover { /* Desde la clase "card", a su pseudoclase hover: */
+    transform: scale(1.1); /* se le indica que escale 1.1 */
+}
+
+/* Desde la pseudoclase hover de la clase "card", a la clase "card-img"*/
+.card:hover .card-img1,
+.card:hover .card-img2,
+.card:hover .card-img3,
+.card:hover .card-img4,
+.card:hover .card-img6,
+.card:hover .card-img7,
+.card:hover .card-img8,
+.card:hover .card-img9 {
+    transform: scale(1.1); /*se le indica que que escale 1.1 */
+}
+
+
+
+
+
+/* ------------------------------------------ */
+
+
+
+
+
+/* TARJETAS DEL BANNER 1 */
+.cards-banner-one { /*A la clase "cards-banner-one": */
+    width: 100%; /* se le indica que ocupe todo el contenedor, */
+    height: 350px; /* con un altura de 350px, */
+    /* que su imagen de fondo sea "china.jpg" de la carpeta "img", la cual no se va repetir, a la vez que va a estar centrada abarcando todo la imagen, */
+    background: url("./img/china.jpg") no-repeat center/cover; 
+    margin-bottom: 40px; /* con un margen de boton de 40px */
+    display: block; /* que el mismo ocupe todo una linea (se le establece un display de tipo block) y */ 
+    transition: .2s; /* que tenga una transición de 0.2 segundos */
+}
+
+.cards-banner-one:hover { /* Desde la clase "cards-banner-one", a su pseudoclase hover: */
+    transform: scale(1.1) /* se le indica que escale 1.1 */
+}
+
+.cards-banner-one .content { /*A la clase "content" de la clase "cards-banner-one": */
+    width: 50%; /* se le establece que abarque un espacio del 50%*/
+    padding: 90px 0 0 30px; /* con un padding de 90px en su parte superior, 0 de ancho y 30px debajo, y */
+    color: #ffffff; /* de color blanco */
+}
+
+.cards-banner-one p { /* A las etiquetas p de la clase ".cards-banner-one": */
+    margin: 10px 0 20px 0; /* se le establece un margen de 20px arriba, 0 a su izquierda, 10px a su derecha y 0 abajo*/
+}
+
+
+
+
+
+ /* ------------------------------------------ */
+
+
+
+
+
+/* TARJETA DEL BANNER 2 */
+.cards-banner-two { /*A la clase "cards-banner-two": */
+    width: 100%; /* que ocupe todo el contenedor, */
+    height: 400px; /* con un altura de 400px, */
+    /* que su imagen de fondo sea "aviones.jpg" de la carpeta "img", la cual no va a repetirse, que a la vez va a estar centrada abarcando toda la imagen, y */
+    background: url("./img/aviones.jpg") no-repeat center center/cover;
+    transition: .2s; /* que tenga una transición de 0.2 segundos */
+}
+
+.cards-banner-two:hover { /* Desde la clase "cards-banner-two", a su pseudoclase hover: */
+    transform: scale(1.1); /* se le indica que escale 1.1 */
+}
+
+.cards-banner-two .content { /*A la clase "content" de la clase "cards-banner-two": */
+    width: 50%; /* se le establece que abarque un espacio del 50%*/
+    padding: 90px 0 0 30px; /* con un padding de 90px en su parte superior, 0 de ancho y 30px debajo, y */
+    color: #fff; /* que sea de color blanco */
+}
+
+.cards-banner-two p { /* A las etiquetas p de la clase ".cards-banner-two": */
+    margin: 10px 0 20px 0; /* se les establece un margen de 20px arriba, 0 a su izquierda, 10px a su derecha y 0 abajo*/
+}
+
+
+
+
+
+/* --------------------------------------------- */
+
+
+
+
+
+/* SOCIAL */
+.social { /* A la clase "social": */
+    margin: 50px; /* se le agrega un margen de 50px*/
+}
+
+.social h3 { /* A las etiquetas h3 de la clase "social": */
+    text-align: center; /* se les establece que su texto se va a centrar, */
+    font-size: 30px; /* su tamaño va a ser de 30px y */
+    margin-bottom: 20px; /* el margen de boton será de 20px */
+}
+
+.links { /* A la clase "links": */
+    display: flex; /* se le establece un display de tipo flex, */
+    align-items: center;  /*  sus items van a estar centrados y */
+    justify-content: center; /* su texto tambien va a estar centrado*/
+}
+
+.links a { /* A las etiquetas a de la clase "links": */
+    margin: 0px 30px; /* con un margen de 0px de alto por 30px de ancho*/
+}
+
+.links a i { /* A las etiquetas i, de la etiquetas a, de la clase "links": */
+    font-size: 3rem; /* su tamaño será de 3rem y */
+    transition: .2s; /* tendrá una transición de 0.2 segundos*/
+}
+
+.links a i:hover { /* Desde la clase "links", desde sus etiquetas a, a las etiquetas i, se le añade su pseudoclase "hover" y:*/
+    opacity: .4; /* se le establece que el mismo tenga una opacidad de .4 (40%) y */
+    transform: scale(1.1); /* se le indica que escale 1.1 */
+    
+}
+
+
+
+
+
+/* -------------------------------------------- */
+
+
+
+
+
+/* LINKS DEL FOOTER */
+.footer-links { /* A la clase "footer-links": */
+    background: #2f3640; /* se le establece un fondo del color #2f3640, */
+    color: #616161; /* con un color #616161 en las letras, */
+    font-size: 18px; /*con un tamaño de 12px y */
+    padding: 35px 0px; /* un padding de 35px de alto por 0px de ancho*/
+}
+
+.footer-container { /* A la clase "footer-container": */
+    display: grid; /* se le establece un display de tipo grid, */
+    grid-template-columns: repeat(4, 1fr); /* creando 4 columnas ( 4 x 1fr = 4fr, cada fr es una columna), */
+    gap: 10px; /* con un espaciado entre columnas de 10px, */
+    align-items: flex-start; /* con sus items ubicados al principio y */
+    justify-content: center; /* con el contenido centrado*/
+}
+
+.footer-links .footer-container ul { /* A las etiquetas ul, de la clase "footer-container", prpia de la clase "footer-links": */
+    margin: 0 auto; /* se le establece un margen de 0 centrado*/
+}
+
+.footer-links .footer-container ul li { /* Desde la clase "footer-links", desde la clase "footer-container" y desde sus etiquetas ul, las etiquetas li: */
+    color: #fff; /* serán de color blanco y */
+    line-height: 2.8; /* se les da tamaño de linea de 2.8*/
+}
+.footer-links .footer-container ul li a:hover { /* A la pseudoclase hover de las etiquetas a, de las etiquetas li, de las etiquetas ul, propias de la clase "footer-container", que está dentro de la clase "footer-links":  */
+    cursor: pointer; /* se le establece que cuando el mouse pase por encima, se transforme en puntero y */
+    color: #646464; /* que cambie su color a #646464*/
+}
+
+
+
+
+
+/* ------------------------------------------- */
+
+
+
+
+
+/* FOOTER*/
+.footer { /* A la clase "footer": */
+    background: hsl(215, 15%, 22%); /* se les establece un fondo hsl de color (215, 15%, 22%),  */
+    color: #616161; /* con un color #616161 de letra, */
+    font-size: 12px; /* del tamaño de 12px, */
+    padding: 20px 0px; /* con un padding de 20px de alto por 0px de ancho */
+    text-align: center; /* que sus items esten centrados, */
+    font-size: 1rem; /* con un tamaño de 1 rem y */
+    padding-bottom: 20px; /* que tenga un padding de boton de 20px */
+}
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+/* PARTE RESPONSIVE -> MOVIL */
+@media (max-width: 900px) {  /* Cuando la pantalla alcance los 900px: */
+    .cards-banner-two { /* A la clase "cards-banner-two": */
+        height: 450px; /* se le establece una altura de 450px */
+    }
+}
+
+@media (max-width: 800px) { /* Cuando la pantalla alcance los 800px: */
+    .nav-main ul.nav-menu.show { /* Desde la clase "nav-main", desde sus etiquetas ul, la clase "nav-menu", cuando tenga la clase "show": */
+        transform: translateX(8px); /* el mismo se va a trasladar a una posición de 8px a su derecha */
+    }
+
+    .nav-main ul.nav-menu li { /* Desde la clase "nav-main", desde sus etiquetas ul y desde la clase "nav-menu", sus etiquetas li: */
+        padding: 20px; /* tendrán un padding de 20px y */
+        font-size: 14px; /* un tamaño de 14px*/
+    }
+
+    .news-cards { /* A la clase "news-cards": */
+        grid-template-columns: repeat(2, 1fr); /* se establecen 2 columnas por cada fila (2 x 1fr = 2fr, por columna)*/
+    }
+
+    .cards-banner-one, /* A la clase "cards-banner-one" y */
+    .cards-banner-two {/* a la clase "cards-banner-two": */
+        width: 80%; /* se le establece que ocupe un 80% del espacio*/
+    }
+
+    .cards-banner-one .content, /* A la clase "content" de la clase "cards-banner-one" y */
+    .cards-banner-two .content { /* a la clase "content" de la clase "cards-banner-two": */
+        width: 100%; /* se les establece que abarquen todo el contenido */
+    }
+    
+    .footer-links .footer-container { /* Desde la clase "footer-links", la clase "container": */
+        grid-template-columns: repeat(2, 1fr); /* se le establecen 2 columnas por cada fila (2 x 1fr = 2fr, por cada columna)*/
+    }
+}
+
+@media (max-width: 750px) { /* Cuando la pantalla alcance los 750px: */
+    .nav-main ul.nav-menu li { /* Desde la clase "nav-main"y desde sus etiquetas ul, a la clase "nav-menu": */
+        display: none; /* se le establece que no tenga dislay */ 
+    }
+
+    .nav-main ul.nav-menu.show li { /* "Desde la clase "nav-main", desde sus etiqeutas ul y desde la clase "nav-menu" cuando tenga la clase "show", a sus etiquetas li: */
+        display: block; /* se le establece que tenga un display de tipo block */
+    }
+}
+
+@media (max-width: 600px) { /* Cuando la pantalla alcannce los 600px: */
+    .nav-main ul.nav-menu li { /* "Desde la clase "nav-main", dedde sus etiqeutas ul, a la clase "nav-menu": */
+        display: none; /* se le establece que no tenga display */
+    }
+
+    .nav-main ul.nav-menu.show li { /* "Desde la clase "nav-main", desde sus etiqeutas ul y desde la clase "nav-menu" cuando tenga la clase "show", a sus etiquetas li: */
+        display: block; /* se le establece que tenga un display de tipo block */
+    }
+
+    .nav-main ul.nav-menu.show { /* Desde la clase "nav-main", desde sus etiquetas ul desde su clase "nav-menu", cuando tenga la clase "show": */
+        transform: translateX(-2px); /* el mismo se va a trasladar 2px a su izquierda y */
+        transition: transform 1s ease-in-out /* que haga un efecto de salida/entrada, de un segundo */ 
+    }
+}
+
+@media (max-width: 500px) { /* Cuando la pantalla alcance los 500px: */
+    .nav-main ul.nav-menu.show { /*  Desde la clase "nav-main" y desde sus etiquetas ul, a la clase "nav-menu" cuando tenga la clase "show": */
+        height: 600px; /* se le establece una altura de 600px y */
+        transform: translateX(-6px); /* que se traslade 6px a su izquierda */
+    }
+
+    .cards-banner-two { /* A la clase "cards-banner-two": */ 
+        height: 500px; /* se le agrega una altura de 500px y */
+        width: 90%; /* un ancho del 90% */
+    }
+}
+
+@media (max-width: 400px) { /* Cuando la pantalla alcance los 400px o menos: */
+    .nav-main ul.nav-menu.show { /*  Desde la clase "nav-main", desde sus etiqeutas ul, a la clase "nav-menu" cuando tenga la clase "show": */ 
+        height: 600px; /* se le indica una altura de 600px, */
+        width: auto; /* con un ancho automatico y */
+        transform: translateX(-30px); /* que el mismo se traslade 30px a su izquierda */
+    }
+
+    .news-cards { /* A la clase "news-cards": */
+        grid-template-columns: 1fr; /*  se le establece un columna (1fr)*/
+    }
+
+    .news-cards img { /*A las imagenes de la clase "news-cards": */
+        height: 270px; /* se les indica una tamaño de 270px*/
+    }
+
+    .cards-banner-one .content, /* A la clase "content" de la clase "cards-banner-one" y */
+    .cards-banner-two .content { /* a la clase "content" de la clase "cards-banner-two": */
+        width: 100%; /* se le establece que ocupe todo el espacio */
+        padding: 60px 20px; /* con un padding de 60px de alto por 20px de ancho */
+    }
+
+    .footer-links .footer-container { /* A la clase "footer-container" de la clase "footer-links": */
+        grid-template-columns: 1fr; /* se le establece una columna (1fr) */
+    }
+}
+
+@media (max-width: 350px) { /* Cuando la pantalla llegue a los 350px: */ 
+    .cards-banner-one { /* A la clase "cards-banner-one": */ 
+        height: 500px; /* se le agrega una altura de 500px y */
+        width: 90%; /* un width del 90% */
+    }
+
+    .cards-banner-two { /* A la clase "cards-banner-two": */ 
+        height: 550px; /* se le agrega una altura de 500px y */
+        width: 90%; /* un width del 90% */
+    }
+}
+
+@media (max-width: 300px) { /* Cuando la pantalla alcance los 300px: */
+    .nav-main ul.nav-menu.show { /* Desde la clase "nav-main", desde sus etiqeutas ul, a la clase "nav-menu" cuando tenga la clase "show": */
+        height: 600px; /* se le establece un altura de 600px, */
+        width: auto; /* con un ancho automatico y */
+        transform: translateX(-30px); /* que se mueva 30px a su izquierda */ 
+    }
+
+    .showcase { /* A la clase "showcase": */ 
+        height: 800px; /* se le indica una altura de 800px */
+    }
+
+    .cards-banner-one { /* A la clase "cards-banner-one": */ 
+        height: 500px; /* se le establece una altura de 500px */ 
+    }
+
+    .cards-banner-two { /* A la clase "cards-banner-two": */ 
+        height: 700px; /* se le indica una altura de 700px */
+    }
+}
+
+@media (max-width: 250px) { /* Cuando la pantalla alcance los 250px: */
+    .nav-main ul.nav-menu.show { /* Desde la clase "nav-main", desde su etiquetas ul, a la clase "nav-menu", cuando tenga la clase "show": */
+        height: 750px; /* se le establece una altura de 750px y */
+        width: auto; /* con un ancho automatico */ 
+    }
+
+    .cards-banner-one { /* A la clase "cards-banner-one": */
+        height: 800px; /* se le indica una altura de 800px */ 
+    }
+
+    .cards-banner-two { /* A la clase "cards-banner-two": */
+        height: 900px; /* se le establece una altura de 900px */
+    }
+}

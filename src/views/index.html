@@ -1,0 +1,84 @@
+<!-- PAGINA PRINCIPAL -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Tecnoticias.com
+    </title>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/main.css"/>
+    <!-- SCROLL REVEAL -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- iMPORTACION DEL "ARCHIVO HEAD.HTML"-->
+    <%- include ("partials/head.html") %>
+
+</head>
+
+<body>
+
+
+
+    <!-- IMPORTACION DEL ARCHIVO "NAVEGATION.HTML"-->
+    <%- include ("partials/navegation.html") %>
+
+    <!-- IMPORTACION DEL ARCHIVO "SHOWCASE.HTML" -->
+    <%- include ("partials/showcase.html") %>
+
+    <!-- IMPORTACIÓN DEL ARCHIVO "NEWS-CARDS.HTML" -->
+    <%- include ("partials/news-cards.html") %>
+
+    <!-- IMPORTACIÓN DEL ARCHIVO "BANNER-ONE.HTML" -->
+    <%- include ("partials/banner-one.html") %>
+
+    <!-- IMPORTACIÓN DEL ARCHIVO "NEWS-CARDS2.HTML" -->
+    <%- include ("partials/news-cards2.html") %>
+
+    <!-- IMPORTACIÓN DEL ARCHIVO "BANNER-TWO.HTML" -->
+    <%- include ("partials/banner-two.html") %>
+
+    <!-- IMPORTACIÓN DEL ARCHIVO "BANNER-TWO.HTML" -->
+    <%- include ("partials/social.html") %>
+
+
+</body>
+
+<footer>
+
+    <!-- IMPORTACIÓN DEL ARCHIVO "LINKS-FOOTER.HTML" -->
+    <%- include ("partials/links-footer.html") %>
+
+    <!-- IMPORTACION DEL ARCHIVO "FOOTER.HTML"-->
+    <%- include ("partials/footer.html") %>
+
+</footer>
+
+<script>
+    // PARTE FUNCIONAL DEL BOTON DE MENU
+    // Se selecciona un elemento, que tenga como clase "menu-btn", se le establece que escuche cuando se haga click y realize la acción de:
+    document.querySelector(".menu-btn").addEventListener("click", () => {
+    /* Seleccionar la clase "nav-menu" y le agregue o quite la clase llamada "show" (todo depende de si la tiene o no, en caso de tenerla
+    la quita y en caso contrario se le agrega. Esto es gracias al metodo toggle)*/
+    document.querySelector(".nav-menu").classList.toggle("show");
+    })
+
+    // SCROLL REVEAL -> APARICION Y DELAY DE CADA ELEMENTO
+    /* La primera clase que aparecerá, será la de "showcase", 
+    luego le seguiran las clases "news-cards", "cards-banner-one", "cards-banner-two" con un delay de 300,
+    y por último al igual que la anteriores, las clases "social", "footer-links" y "footer" continuarán tambíen con un delay de 300 */
+    ScrollReveal().reveal(".showcase"); 
+    ScrollReveal().reveal(".news-cards", { delay : 300}); 
+    ScrollReveal().reveal(".cards-banner-one", { delay : 300}); 
+    ScrollReveal().reveal(".cards-banner-two", { delay : 300}); 
+    ScrollReveal().reveal(".social", {delay : 300});
+    ScrollReveal().reveal(".footer-links", {delay : 300});
+    ScrollReveal().reveal(".footer", {delay : 300});
+</script>
+
+</html>
+
